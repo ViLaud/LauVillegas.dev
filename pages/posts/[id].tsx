@@ -1,10 +1,17 @@
-import Layout from '../../components/layout/layout';
+import Layout, { PageType } from '../../components/layout/layout';
 import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.css';
 import Date from '../../components/date/date';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
-export async function getStaticProps({ params }) {
+export type PostData = {
+  id: string,
+  title: string,
+  date: any,
+  htmlContent: string,
+};
+
+export async function getStaticProps({ params }: any) {
   const postData = await getPostData(params.id);
   return {
     props: {
@@ -20,9 +27,10 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-export default function Post({ postData }) {
+export default function Post({postData}:any) {
+  console.log(postData);
     return (
-      <Layout home={false}>
+      <Layout pageType={PageType.BlogPost}>
         <Head>
         <title>{postData.title}</title>
         <meta name="og:title" content={postData.title}/>

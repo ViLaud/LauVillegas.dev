@@ -15,6 +15,7 @@ function classNames(...classes) {
 
 export default function Nav() {
   return (
+    // Some code taken from Nav example on Tailwind UI components
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>

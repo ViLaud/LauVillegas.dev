@@ -67,7 +67,9 @@ export default function Layout({ children, pageType }: Props) {
                 </h2>
             )}
           </header>
-         {children}
+          <div className='p-5'>
+            {children}
+          </div>
           {pageType === PageType.BlogPost && (
             <div className={styles.backToHome}>
               <Link href="/">← Back to home</Link>

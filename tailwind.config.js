@@ -9,7 +9,15 @@ module.exports = {
   theme: {
     container: {
       center: true,
-    }
+    },
+    colors: {
+      pink: '#ECB7B7'
+    },
+    extend: {
+    fontFamily: {
+      archivo: ['var(--font-archivo)'],
+    },
+  },
 	},
   plugins: [],
 }

@@ -3,12 +3,17 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../../styles/utils.module.css';
 import Link from 'next/link';
+import NeoContainer from '../neo/neoHeader';
+import NeoHeader from '../neo/neoHeader';
+import Nav from '../nav';
 
 const name = 'Lau Villegas';
+const headerText = "Hey there! I'm Lau. \n A creative engineer passionate abouolving human problems through Software, AI and And here are some of my thoughts, ideas and research.";
 export const siteTitle = 'Lau\'s Home Site';
 export enum PageType {
   Home,
   BlogPost,
+  Components,
 }
 
 type Props = {
@@ -18,7 +23,7 @@ type Props = {
 
 export default function Layout({ children, pageType }: Props) {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -32,42 +37,37 @@ export default function Layout({ children, pageType }: Props) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="flex flex-col">
-        <div className='max-w-screen-md px-auto place-self-center'>
+      <div className="flex flex-col font-archivo">
+        <Nav></Nav>
+        <div className='max-w-screen-md px-auto place-self-center mt-5'>
           <header className="">
             {pageType === PageType.Home ? (
-              <>
+              <NeoHeader>
+                <div className='flex flex-row justify-center'>
+                  <div className='basis-1/2 grow text-left my-auto ml-7'>
+                  <h1 className='text-lg'>Hey there! I'm Lau. <br/> A creative software engineer, blooming with ideas and obsessed with solving meaningful human problems. <br/> Here are some of my learnings, projects and ongoing research.</h1>
+                  </div>
+                  <div className=''>
                 <Image
                   priority
-                  src="/images/profile.png"
-                  className="my-auto"
-                  height={144}
-                  width={108}
+                  src="/images/hh.png"
+                  className="basis-1/4 my-auto"
+                  width={200}
+                  height={50}
                   alt=""
                 />
-                <h1 className="py-auto">{name}</h1>
-              </>
+                </div>
+              </div>
+            </NeoHeader>
             ) : (
-              <>
-                <Link href="/">
-                  <Image
-                    priority
-                    src="/images/profile.png"
-                    className={utilStyles.borderCircle}
-                    height={144}
-                    width={108}
-                    alt=""
-                  />
-                </Link>
                 <h2 className={utilStyles.headingLg}>
                   <Link href="/" className={utilStyles.colorInherit}>
-                    {name}
+                    Go Back Home
                   </Link>
                 </h2>
-              </>
             )}
           </header>
-          <main>{children}</main>
+         {children}
           {pageType === PageType.BlogPost && (
             <div className={styles.backToHome}>
               <Link href="/">← Back to home</Link>

@@ -1,0 +1,40 @@
+.container {
+    max-width: 36rem;
+    padding: 0 1rem;
+    margin: 3rem auto 6rem;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .backToHome {
+    margin: 3rem 0 0;
+  }
+
+  .neoCard {
+    border: 3px solid #000000;
+    max-height: min-content;
+    border-radius: 30px 30px 30px 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+
+  .neoHeader {
+    border: 3px solid #000000;
+    max-height: min-content;
+    border-radius: 30px 30px 30px 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 10px 0;
+    box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+    -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+  }

@@ -35,6 +35,7 @@ export default function Post({postData}:any) {
         <title>{postData.title}</title>
         <meta name="og:title" content={postData.title}/>
         </Head>
+        <div>
         <article>
             <h1 className={utilStyles.headingXl}>{postData.title}</h1>
             <div className={utilStyles.lightText}>
@@ -42,6 +43,7 @@ export default function Post({postData}:any) {
             </div>
             <div dangerouslySetInnerHTML={{__html: postData.htmlContent}} />
         </article>
+        </div>
       </Layout>
     );
   }

@@ -10,7 +10,7 @@ const archivo = Archivo({
 
 export default function App({ Component, pageProps }) {
     return (
-    <main className={`lightMode ${archivo.variable}`}>
+    <main className={`${archivo.variable}`}>
       <Component {...pageProps} />
     </main>
     )

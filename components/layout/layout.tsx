@@ -23,7 +23,7 @@ type Props = {
 
 export default function Layout({ children, pageType }: Props) {
   return (
-    <div className="container w-screen">
+    <div className="container grow">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -44,7 +44,7 @@ export default function Layout({ children, pageType }: Props) {
             {pageType === PageType.Home && (
               <NeoHeader>
 
-                <div className='flex flex-row justify-center'>
+                <div className='bg-blend-multiply flex flex-row justify-center'>
                   {/* mobile header */}
                   <div className='basis-1/2 grow text-left my-auto ml-7 lg:hidden'>
                   <h1 className='text-md'>Hey there! I'm Lau.</h1>
@@ -56,7 +56,6 @@ export default function Layout({ children, pageType }: Props) {
                   <h1 className='text-lg'>Hey there! I'm Lau. <br/> A creative software engineer, blooming with ideas and obsessed with solving meaningful human problems. <br/> <br/>Here are some of my learnings, projects and ongoing research.</h1>
                   </div>
 
-                  <div className=''>
                 <Image
                   priority
                   src="/images/hh.png"
@@ -65,7 +64,6 @@ export default function Layout({ children, pageType }: Props) {
                   height={50}
                   alt=""
                 />
-                </div>
               </div>
             </NeoHeader>
             ) }

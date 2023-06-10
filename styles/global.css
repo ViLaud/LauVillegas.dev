@@ -1,19 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html,
-body {
-  background-color: black;
-  padding: 0;
-  margin: 0;
-  font-family: var(--font-archivo);   
-  line-height: 1.6;
-  font-size: 18px;
-  height: 100vh;
-}
 
-* {
-  box-sizing: border-box;
+@layer base {
+  html,
+  body {
+    @apply bg-white dark:bg-slate-950 text-black dark:text-white font-archivo;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+  a {
+    @apply hover:underline;
+  }
 }
 
 a:hover {
@@ -34,9 +32,9 @@ img {
   font-size: 25px;
   font-weight: 700;
   margin: 10px 10px;
-  box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
-  -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
-  -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
 }
 
 .neoBorder {
@@ -46,9 +44,9 @@ img {
   -webkit-border-radius: 30px 30px 30px 30px;
   font-size: 25px;
   font-weight: 700;
-  box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
-  -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
-  -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
 }
 
 .neoPostCard {
@@ -59,34 +57,9 @@ img {
   font-size: 25px;
   font-weight: 700;
   margin: 20px 0;
-  box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
-  -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
-  -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
   padding: 0 10px;
   border-radius: 0 30px 30px 0;
-}
-
-.postLink {
-  text-decoration: underline;
-}
-
-.darkMode {
-  background-color: black;
-  color: white;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: var(--font-archivo);   
-  line-height: 1.6;
-  font-size: 18px;
-}
-
-.lightMode {
-  background-color: white;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: var(--font-archivo);   
-  line-height: 1.6;
-  font-size: 18px;
 }

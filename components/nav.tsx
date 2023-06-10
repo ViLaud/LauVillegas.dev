@@ -70,7 +70,7 @@ export default function Nav() {
                 <button
                   type="button"
                 
-                  className="neoBorder rounded-md hover:bg-pink p-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="neoBorder active:animate-ping rounded-md hover:bg-pink p-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="sr-only">Switch to dark mode</span>
                   <MoonIcon className="h-6 w-6" aria-hidden="true" />

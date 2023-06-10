@@ -13,7 +13,7 @@ type Props = {
 
 export default function NeoHeader({ children, imageSource, title, subtitle }: Props) {
   return (
-    <div className={`my-5 bg-pink neoHeader`}>
+    <div className={`bg-pink neoHeader`}>
       <div className='flex flex-row justify-center'>
         <div className='basis-1/2 grow text-left my-auto ml-7'>
           {title &&

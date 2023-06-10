@@ -10,13 +10,27 @@ module.exports = {
     container: {
       center: true,
     },
-    colors: {
-      pink: '#ECB7B7'
-    },
     extend: {
-    fontFamily: {
-      archivo: ['var(--font-archivo)'],
-    },
+      colors: {
+        pink: '#ECB7B7',
+        green: '#263E2B',
+      },
+      fontFamily: {
+        archivo: ['var(--font-archivo)'],
+      },
+      // screens: {
+      //   sm: '480px',
+      //   md: '768px',
+      //   lg: '976px',
+      //   xl: '1440px',
+      // },
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      }
   },
 	},
   plugins: [],

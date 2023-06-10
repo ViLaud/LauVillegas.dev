@@ -18,12 +18,12 @@ export enum PageType {
 
 type Props = {
   children: React.ReactNode,
-  pageType: PageType,
+  pageType?: PageType,
 }
 
 export default function Layout({ children, pageType }: Props) {
   return (
-    <div className="container mx-auto px-4">
+    <div className="container w-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -37,16 +37,25 @@ export default function Layout({ children, pageType }: Props) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="flex flex-col font-archivo">
         <Nav></Nav>
+      <div className="flex flex-col font-archivo">
         <div className='max-w-screen-md px-auto place-self-center mt-5'>
           <header className="">
-            {pageType === PageType.Home ? (
+            {pageType === PageType.Home && (
               <NeoHeader>
+
                 <div className='flex flex-row justify-center'>
-                  <div className='basis-1/2 grow text-left my-auto ml-7'>
-                  <h1 className='text-lg'>Hey there! I'm Lau. <br/> A creative software engineer, blooming with ideas and obsessed with solving meaningful human problems. <br/> Here are some of my learnings, projects and ongoing research.</h1>
+                  {/* mobile header */}
+                  <div className='basis-1/2 grow text-left my-auto ml-7 lg:hidden'>
+                  <h1 className='text-md'>Hey there! I'm Lau.</h1>
+                  <h2 className='text-lg'>A creative software engineer. <br/><br/> Here are some of my learnings, projects and ongoing research.</h2>
                   </div>
+
+                  {/* desktop header */}
+                  <div className='hidden basis-1/2 grow text-left my-auto ml-7 lg:block'>
+                  <h1 className='text-lg'>Hey there! I'm Lau. <br/> A creative software engineer, blooming with ideas and obsessed with solving meaningful human problems. <br/> <br/>Here are some of my learnings, projects and ongoing research.</h1>
+                  </div>
+
                   <div className=''>
                 <Image
                   priority
@@ -59,22 +68,11 @@ export default function Layout({ children, pageType }: Props) {
                 </div>
               </div>
             </NeoHeader>
-            ) : (
-                <h2 className={utilStyles.headingLg}>
-                  <Link href="/" className={utilStyles.colorInherit}>
-                    Go Back Home
-                  </Link>
-                </h2>
-            )}
+            ) }
           </header>
           <div className='p-5'>
             {children}
           </div>
-          {pageType === PageType.BlogPost && (
-            <div className={styles.backToHome}>
-              <Link href="/">← Back to home</Link>
-            </div>
-          )}
         </div>
       </div>
     </div>
